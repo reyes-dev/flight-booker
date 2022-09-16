@@ -20,6 +20,3 @@ This project is a simple web app designed to let a user book a one-way flight. I
 
 ### Local Installation
 TBA
-
-### Reflections
-TBA
