@@ -16,7 +16,7 @@ end
 
 10.times do
   airport_ids = [*1..9].sample(2)
-  departure_date = Time.zone.now - rand(1..4.years) - rand(1..31).days
+  departure_date = Time.zone.now + rand(0..1.years) + rand(0..12.months) + rand(1..31).days
   Flight.create(departure_airport_id: airport_ids[0], arrival_airport_id: airport_ids[1],
                 departure_date: departure_date, flight_duration: rand(1..12))
   puts "Flight Created: From #{Flight.last.departure_airport.airport_code} to #{Flight.last.arrival_airport.airport_code}"
