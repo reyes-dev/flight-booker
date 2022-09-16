@@ -8,3 +8,19 @@
   <%= submit_tag("Search") %>
 <% end %>
 
+<ul>
+  <% @flights.each do |flight| %>
+  <li>
+  <p>Origin: </p>
+    <%= Airport.find(flight.departure_airport_id).airport_code %>  
+    <p>Destination: </p>
+    <%= Airport.find(flight.arrival_airport_id).airport_code %>
+    <p>Date of departure: </p>
+    <%= flight.departure_date %>
+    <p>Time of departure: </p>
+    <%= flight.departure_date.strftime("%I:%M%p") %>
+    <p>Flight duration: </p>
+    <%= flight.flight_duration %>
+  </li>
+  <% end %>
+</ul>

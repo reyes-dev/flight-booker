@@ -15,8 +15,8 @@ class FlightsController < ApplicationController
                               @datetime_departure,
                               params[:departure_airport_id],
                               params[:arrival_airport_id])
-      else
-        @flights = []
-      end
+    else
+      @flights = []
+    end
   end
 end
