@@ -22,8 +22,8 @@
       <%= flight.flight_duration %>
       <%= f.radio_button :flight_id, flight.id %>
     <% end %>
-
+    
     <%= f.hidden_field :num_tickets, value: @num_tickets %>
     <%= f.submit("Book Flight") %>
   <% end %>
-  <% end %>
+<% end %>

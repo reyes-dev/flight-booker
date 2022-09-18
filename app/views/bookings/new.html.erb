@@ -1,10 +1,10 @@
-<%= form_with model: @booking do |f| %>
 <p>Flight Information: </p>
   <%= @selected_flight.departure_date %>
   <%= @departure_airport.airport_code %>
   <%= @arrival_airport.airport_code %>
   <%= @selected_flight.id %>
-  
+
+<%= form_with model: @booking do |f| %>
   <p>Please fill out information: </p>
     <%= f.fields_for :passengers do |passenger_form| %>
       <%= passenger_form.label :name %>
@@ -13,6 +13,6 @@
       <%= passenger_form.label :email %>
       <%= passenger_form.email_field :email %><br />
   <% end %>
-
+  <%= f.hidden_field :flight_id, value: @flight_id %>
   <%= f.submit "Book Flight" %>
 <% end %>
