@@ -15,6 +15,7 @@ class FlightsController < ApplicationController
                               @datetime_departure,
                               params[:departure_airport_id],
                               params[:arrival_airport_id])
+      @num_tickets = params[:num_tickets]
     else
       @flights = []
     end

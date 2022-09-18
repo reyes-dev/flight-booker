@@ -7,20 +7,23 @@
   <%= submit_tag("Search") %>
 <% end %>
 
+<% unless @flights.empty? %>
   <%= form_with(url: "bookings/new", method: "get") do |f| %>
     <% @flights.each do |flight| %>
-        <p>Origin: </p>
-        <%= Airport.find(flight.departure_airport_id).airport_code %>  
-        <p>Destination: </p>
-        <%= Airport.find(flight.arrival_airport_id).airport_code %>
-        <p>Date of departure: </p>
-        <%= flight.departure_date %>
-        <p>Time of departure: </p>
-        <%= flight.departure_date.strftime("%I:%M%p") %>
-        <p>Flight duration: </p>
-        <%= flight.flight_duration %>
-        <%= f.radio_button :flight_choice, flight %>
+      <p>Origin: </p>
+      <%= Airport.find(flight.departure_airport_id).airport_code %>  
+      <p>Destination: </p>
+      <%= Airport.find(flight.arrival_airport_id).airport_code %>
+      <p>Date of departure: </p>
+      <%= flight.departure_date %>
+      <p>Time of departure: </p>
+      <%= flight.departure_date.strftime("%I:%M%p") %>
+      <p>Flight duration: </p>
+      <%= flight.flight_duration %>
+      <%= f.radio_button :flight_id, flight.id %>
     <% end %>
-    <% f.hidden_field :num_tickets, value: "num_tickets" %>
+
+    <%= f.hidden_field :num_tickets, value: @num_tickets %>
     <%= f.submit("Book Flight") %>
+  <% end %>
   <% end %>
