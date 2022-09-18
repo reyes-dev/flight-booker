@@ -12,7 +12,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.create booking_params
 
-    redirect_to root_path
+    redirect_to @booking
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    @departure_code = Airport.find(@booking.flight.departure_airport_id).airport_code
+    @arrival_code = Airport.find(@booking.flight.arrival_airport_id).airport_code
   end
 
   private

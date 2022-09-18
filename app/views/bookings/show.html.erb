@@ -1,0 +1,12 @@
+<p>Origin/Destination:</p>
+<%= "#{@departure_code} to #{@arrival_code} " %>
+<p>Departure Date:</p>
+<%= @booking.flight.departure_date %>
+<p>Flight Duration:</p>
+<%= "#{@booking.flight.flight_duration}hrs" %>
+<br />
+<% @booking.passengers.each do |passenger| %><br />
+  <%= "-Ticket- " %><br />
+  <%= "Name: #{passenger.name}" %><br />
+  <%= "Email: #{passenger.email}" %><br />
+<% end %>
