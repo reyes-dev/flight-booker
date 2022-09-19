@@ -2,7 +2,7 @@
   <%= f.select :departure_airport_id, options_for_select(@airport_options) %>
   <%= f.select :arrival_airport_id, options_for_select(@airport_options) %>
   <%= f.select :num_tickets, options_for_select(@passenger_options) %>
-  <%= f.date_select :departure_date, order: [:year, :month, :day], start_year: Time.now.year + 2, end_year: Time.now.year %>
+  <%= f.date_select :departure_date, order: [:year, :month, :day], start_year: Time.now.year, end_year: Time.now.year %>
   
   <%= submit_tag("Search") %>
 <% end %>
