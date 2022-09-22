@@ -9,12 +9,7 @@ class FlightsController < ApplicationController
         params['departure_date(3i)'].to_i
       ).strftime('%Y-%m-%d')
       @datetime_departure = DateTime.strptime(@selected_date, '%Y-%m-%d')
-      @flights = Flight.where('DATE(departure_date) = ?
-                              AND departure_airport_id = ?
-                              AND arrival_airport_id = ?',
-                              @datetime_departure.to_date,
-                              params[:departure_airport_id],
-                              params[:arrival_airport_id])
+      @flights = Flight.departing_date(@datetime_departure.to_date).departing_airport_id(params[:departure_airport_id]).arriving_airport_id(params[:arrival_airport_id])
       @num_tickets = params[:num_tickets]
     else
       @flights = []
