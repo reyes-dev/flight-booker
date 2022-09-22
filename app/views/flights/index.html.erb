@@ -7,6 +7,7 @@
   <%= submit_tag("Search") %>
 <% end %>
 
+
 <% unless @flights.empty? %>
   <%= form_with(url: "bookings/new", method: "get") do |f| %>
     <% @flights.each do |flight| %>
