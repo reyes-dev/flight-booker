@@ -1,12 +1,17 @@
-<p>Origin/Destination:</p>
-<%= "#{@departure_code} to #{@arrival_code} " %>
-<p>Departure Date:</p>
-<%= @booking.flight.departure_date %>
-<p>Flight Duration:</p>
-<%= "#{@booking.flight.flight_duration}hrs" %>
-<br />
-<% @booking.passengers.each do |passenger| %><br />
-  <%= "-Ticket- " %><br />
-  <%= "Name: #{passenger.name}" %><br />
-  <%= "Email: #{passenger.email}" %><br />
-<% end %>
+<div class="show_booking">
+  <p class="flight_info">Flight Information</p>
+  <br />
+  <%= "#{@departure_code} to #{@arrival_code} " %>
+  <p>Departure Date: <%= @booking.flight.departure_date %></p>
+  <p>Flight Duration:   <%= "#{@booking.flight.flight_duration}hrs" %></p>
+</div>
+
+<div class="ticket_container">
+  <% @booking.passengers.each do |passenger| %>
+    <div class="ticket">
+      <%= "Odin Flights Ticket" %>
+      <p><%= "Name: #{passenger.name}" %></p>
+      <p><%= "Email: #{passenger.email}" %></p>
+    </div>
+  <% end %>
+</div>

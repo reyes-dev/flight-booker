@@ -1,18 +1,20 @@
-<p>Flight Information: </p>
-  <%= @selected_flight.departure_date %>
-  <%= @departure_airport.airport_code %>
-  <%= @arrival_airport.airport_code %>
-  <%= @selected_flight.id %>
+<div class="new_booking">
+  <p class="flight_info">Flight Information </p>
+  <p><%= @selected_flight.departure_date %></p>
+  <p><%= @departure_airport.airport_code %></p>
+  <p><%= @arrival_airport.airport_code %></p>
+  <p><%= @selected_flight.id %></p>
 
-<%= form_with model: @booking do |f| %>
-  <p>Please fill out information: </p>
-    <%= f.fields_for :passengers do |passenger_form| %>
-      <%= passenger_form.label :name %>
-      <%= passenger_form.text_field :name %>
+  <%= form_with model: @booking do |f| %>
+    <p>Please fill out booking information: </p>
+      <%= f.fields_for :passengers do |passenger_form| %>
+        <%= passenger_form.label :name %>
+        <%= passenger_form.text_field :name %>
 
-      <%= passenger_form.label :email %>
-      <%= passenger_form.email_field :email %><br />
+        <%= passenger_form.label :email %>
+        <%= passenger_form.email_field :email %><br />        
+    <% end %>
+    <%= f.hidden_field :flight_id, value: @flight_id %>
+    <%= f.submit "Book Flight" %>
   <% end %>
-  <%= f.hidden_field :flight_id, value: @flight_id %>
-  <%= f.submit "Book Flight" %>
-<% end %>
+</div>

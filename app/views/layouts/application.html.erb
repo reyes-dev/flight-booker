@@ -7,11 +7,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'styles' %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <h2><%= link_to 'Flight Booker', root_path %></h2>
-    <%= yield %>
+  <div class="container">
+    <div class="header">
+      <p><%= link_to "Odin Flights", root_path %></p>
+    </div>
+    
+    <div class="form_decoration"><p>AIR BOOKING</p><%= image_tag 'airplane', class: 'airplane' %></div>
+    <div class="content">
+      <%= yield %>      
+    </div>
+  </div>
   </body>
 </html>

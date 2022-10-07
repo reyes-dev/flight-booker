@@ -1,0 +1,211 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: georgia, sans-serif;
+  background-color: #EDF2F4;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: grid;
+  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+  height: 100vh;
+
+}
+.header {
+  background-color: #2B2D42;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  background-color: #fdfcdc;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  grid-column-start: 4;
+  grid-column-end: 14;
+  grid-row-start: 5;
+  grid-row-end: -1;
+  
+}
+ .form_decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #50010E;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  grid-column-start: 4;
+  grid-column-end: 14;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+.form_decoration {
+  text-transform: uppercase;
+}
+.flights_form {
+  grid-column-start: 6;
+  grid-column-end: 12;
+  grid-row-start: 3;
+  color: #1a1423;
+}
+.airplane {
+  height: 50px;
+}
+.header {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+}
+.header p {
+  font-size: 3em;
+  grid-row-start: 6;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+.flight_list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 4;
+  grid-row-end: -1;
+}
+.flights_container {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  background-color: #fdfcdc !important;
+  box-shadow: none !important;
+
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 3;
+  grid-row-end: -1;
+  height:fit-content;
+}
+.flights_container div {
+  height:fit-content;
+}
+.book_flight_container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 4;
+  grid-row-end: -1;
+  padding: 0 !important;
+}
+.book_flight_container div {
+  background-color: #50010E;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 5px 3px 3px black;
+}
+.book_flight_container input {
+grid-column-start: 8;
+grid-row-start: 2;
+display: inline-block;
+outline: 0;
+cursor: pointer;
+border: 2px solid #50010E;
+border-radius: 3px;
+color: #50010E;
+background: #fdfcdc;
+font-size: 1.8em;
+font-weight: 600;
+line-height: 28px;
+padding: 12px 20px;
+text-align:center;
+transition-duration: .15s;
+transition-property: all;
+transition-timing-function: cubic-bezier(.4,0,.2,1);
+text-transform: uppercase;
+}
+.book_flight_container input:hover{
+  background: #b75d69;
+}
+.new_booking {
+  color: #50010E;
+  grid-column-start: 4;
+  grid-column-end: 14;
+  grid-row-start: 2;
+  grid-row-end: -1;
+}
+.new_booking p {
+  justify-content: center;
+  align-self: center;
+}
+.new_booking form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.new_booking form > form {
+  border: 1px solid #1a1423;
+}
+.new_booking input[type="submit"] {
+  display: inline-block;
+outline: 0;
+cursor: pointer;
+border: 2px solid #50010E;
+border-radius: 3px;
+color: #50010E;
+background: #fdfcdc;
+font-size: 1.8em;
+font-weight: 600;
+line-height: 28px;
+padding: 12px 20px;
+text-align:center;
+transition-duration: .15s;
+transition-property: all;
+transition-timing-function: cubic-bezier(.4,0,.2,1);
+text-transform: uppercase;
+
+}
+.new_booking input:hover {
+  background: #b75d69;
+}
+.flight_info {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.show_booking {
+  grid-column-start: 2;
+  grid-column-end: -1;
+  grid-row-start: 2;
+  color: #50010E;
+}
+.ticket_container  {
+  color: #50010E;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-column-start: 2;
+  grid-column-end: -1;
+  grid-row-start: 4;
+  grid-row-end: -1;
+}
+.ticket {
+  border: 2px dotted #50010E;
+  width: 20rem;
+  padding: 8px;
+}
+.header a {
+  color: white;
+  text-decoration: none;
+}
